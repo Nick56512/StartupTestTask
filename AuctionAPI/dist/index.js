@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const auction_repository_1 = require("./repository/auction_repository");
+const bid_repository_1 = require("./repository/bid_repository");
+const websockets_server_1 = require("./server/websockets_server");
+const auction_1 = require("./auction");
+const httpServer_1 = require("./server/httpServer");
+const _auctRepo = new auction_repository_1.AuctionRepository('auction_elements.json');
+const _bidRepo = new bid_repository_1.BidRepository('bids.json');
+const auction = new auction_1.Auction(_auctRepo, _bidRepo);
+const wsPort = 8000;
+const httpPort = 9000;
+const wsServer = new websockets_server_1.AuctionServer(wsPort, auction);
+const httpServer = new httpServer_1.AuctionHttpServer(httpPort, auction);
+auction.startAuction();
+wsServer.startServer();
+httpServer.startServer();

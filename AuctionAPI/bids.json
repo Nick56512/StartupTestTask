@@ -1,0 +1,32 @@
+[
+    {
+        "auctionElementId": 1,
+        "price": 156000,
+        "id": 8
+    },
+    {
+        "id": 9,
+        "auctionElementId": 20,
+        "price": 4569
+    },
+    {
+        "id": 10,
+        "auctionElementId": 20,
+        "price": 20000
+    },
+    {
+        "id": 11,
+        "auctionElementId": 13,
+        "price": 2344
+    },
+    {
+        "id": 12,
+        "auctionElementId": 1,
+        "price": 23342343243
+    },
+    {
+        "id": 13,
+        "auctionElementId": 2,
+        "price": 5643
+    }
+]

@@ -15,16 +15,17 @@ class AuctionHttpServer {
     addMiddleware() {
         const cors = require('cors');
         this.api.use(cors({ origin: '*' }));
+        this.api.use(this.jsonParser);
     }
     registerRoutes() {
-        this.api.post('/addAuction', this.jsonParser, (req, res) => {
+        this.api.post('/addAuction', (req, res) => {
             if (!req.body) {
                 return res.sendStatus(400);
             }
             this.auction.addNewAuctionElement(req.body);
             res.sendStatus(200);
         });
-        this.api.post('/addBid', this.jsonParser, (req, res) => {
+        this.api.post('/addBid', (req, res) => {
             if (!req.body) {
                 return res.sendStatus(400);
             }

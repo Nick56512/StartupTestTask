@@ -2,11 +2,11 @@ class Bid{
     public auctionElementId:number=0;
     public price:number=0;
 
-   /* constructor(
+    constructor(
         auctionElementId:number,
         price:number)
     {
         this.auctionElementId=auctionElementId,
         this.price=price;
-    }*/
+    }
 }

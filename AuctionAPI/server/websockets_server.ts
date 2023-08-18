@@ -3,7 +3,7 @@ import WebSocket, { WebSocketServer } from 'ws';
 import { Auction } from "../auction";
 import { AuctionElement } from "../models/auction_element";
 
-export class AuctionServer implements IServer
+export class AuctionWebSocketServer implements IServer
 {
     port:number;
     webSocketServer:WebSocketServer
@@ -19,33 +19,34 @@ export class AuctionServer implements IServer
             port:this.port
         });
     }
+
+    private notifyClients():void{
+        this.clients?.forEach(client=>{
+            if(client.bufferedAmount==0){
+                const auctionElements:AuctionElement[]=this.auction.getAuctionList()
+                const json:string=JSON.stringify({
+                    auctionElements:auctionElements,
+                })
+                client.send(json)
+            }
+        })
+    }
+
     public startServer()
     {
+        const timerId=setInterval(()=>{
+            this.notifyClients()
+        },1000)
         this.webSocketServer.on('connection',(ws)=>{
-            let intervalId:any;
-            ws.on('message',(data)=>{
-                if(data.toString("utf-8")=='getAuction'){
-                    intervalId=setInterval(()=>{
-                        const auctionElements:AuctionElement[]=this.auction.getAuctionList()
-                        const json:string=JSON.stringify({
-                            auctionElements:auctionElements,
-                        })
-                        ws.send(json)
-                    },1000)
-                }
+            ws.on('close',()=>{
+                this.clients.delete(ws);
             })
-
-            ws.on('close',(code)=>{
-                clearInterval(intervalId)
-                if(code===ws.CLOSED){
-                    this.clients.delete(ws)
-                }
-            });
             this.clients.add(ws);
         })
 
         this.webSocketServer.on('close',()=>{
             this.auction.stopAuction()
+            clearInterval(timerId)
             console.log('Auction was stopped')
         })
 

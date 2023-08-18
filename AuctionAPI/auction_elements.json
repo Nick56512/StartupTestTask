@@ -17,56 +17,56 @@
         "description": "Vintage Watch",
         "startingBid": 800,
         "endTime": "2023-08-30T07:12:35.192Z",
-        "remainder": 1019266394
+        "remainder": 1009417878
     },
     {
         "id": 4,
         "description": "Classic Car",
         "startingBid": 15000,
         "endTime": "2023-08-21T07:12:35.192Z",
-        "remainder": 241666394
+        "remainder": 231817878
     },
     {
         "id": 5,
         "description": "Diamond Necklace",
         "startingBid": 2000,
         "endTime": "2023-08-20T07:12:35.192Z",
-        "remainder": 155266394
+        "remainder": 145417878
     },
     {
         "id": 6,
         "description": "Rare Book Collection",
         "startingBid": 700,
         "endTime": "2023-09-10T14:00:00Z",
-        "remainder": 1994111202
+        "remainder": 1984262686
     },
     {
         "id": 7,
         "description": "Signed Movie Memorabilia",
         "startingBid": 300,
         "endTime": "2023-09-15T19:00:00Z",
-        "remainder": 2444111202
+        "remainder": 2434262686
     },
     {
         "id": 8,
         "description": "Sculpture Artwork",
         "startingBid": 1200,
         "endTime": "2023-09-18T17:00:00Z",
-        "remainder": 2696111202
+        "remainder": 2686262686
     },
     {
         "id": 9,
         "description": "Vintage Vinyl Records",
         "startingBid": 400,
         "endTime": "2023-09-22T21:00:00Z",
-        "remainder": 3056111202
+        "remainder": 3046262686
     },
     {
         "id": 10,
         "description": "Sports Memorabilia Collection",
         "startingBid": 600,
         "endTime": "2023-09-25T23:00:00Z",
-        "remainder": 3322511202,
+        "remainder": 3312662686,
         "winnerBid": {
             "id": 1,
             "auctionElementId": 10,
@@ -75,47 +75,15 @@
     },
     {
         "id": 11,
-        "description": "Description",
-        "startingBid": 10000,
-        "remainder": 0,
-        "endAuction": true,
-        "endTime": "2023-08-18T11:55"
-    },
-    {
-        "id": 12,
-        "description": "dwsdsada",
-        "startingBid": 2312,
-        "remainder": 31811202,
+        "description": "Unique spanish coin",
+        "startingBid": 120000,
+        "remainder": 2686,
         "endAuction": false,
-        "endTime": "2023-08-18T23:55",
+        "endTime": "2023-08-18T17:49",
         "winnerBid": {
-            "id": 4,
-            "auctionElementId": 12,
-            "price": 12000
+            "id": 8,
+            "auctionElementId": 11,
+            "price": 12000000
         }
-    },
-    {
-        "id": 13,
-        "description": "Unique beer",
-        "startingBid": 1200,
-        "remainder": 0,
-        "endAuction": false,
-        "endTime": "2023-08-18T14:11"
-    },
-    {
-        "id": 14,
-        "description": "",
-        "startingBid": 0,
-        "remainder": 0,
-        "endAuction": false,
-        "endTime": "2023-08-18T21:14"
-    },
-    {
-        "id": 15,
-        "description": "wsdw",
-        "startingBid": 2332,
-        "remainder": 0,
-        "endAuction": false,
-        "endTime": "2023-08-18T16:17"
     }
 ]

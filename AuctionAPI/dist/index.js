@@ -10,7 +10,7 @@ const _bidRepo = new bid_repository_1.BidRepository('bids.json');
 const auction = new auction_1.Auction(_auctRepo, _bidRepo);
 const wsPort = 8000;
 const httpPort = 9000;
-const wsServer = new websockets_server_1.AuctionServer(wsPort, auction);
+const wsServer = new websockets_server_1.AuctionWebSocketServer(wsPort, auction);
 const httpServer = new httpServer_1.AuctionHttpServer(httpPort, auction);
 auction.startAuction();
 wsServer.startServer();

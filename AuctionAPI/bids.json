@@ -23,5 +23,25 @@
         "id": 4,
         "auctionElementId": 12,
         "price": 12000
+    },
+    {
+        "id": 5,
+        "auctionElementId": 16,
+        "price": 66666
+    },
+    {
+        "id": 6,
+        "auctionElementId": 17,
+        "price": 28989
+    },
+    {
+        "id": 7,
+        "auctionElementId": 17,
+        "price": 100000
+    },
+    {
+        "id": 8,
+        "auctionElementId": 11,
+        "price": 12000000
     }
 ]

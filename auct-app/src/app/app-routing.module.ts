@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuctionsComponent } from './auctions-list/auctions-component';
+import { AuctionsComponent } from './auction/auctions-component';
 
 const routes: Routes = [
   {path:'auctList', component:AuctionsComponent}

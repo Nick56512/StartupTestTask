@@ -9,18 +9,13 @@ export class Auction{
 
     private auctionElements:AuctionElement[];
 
-    private bids:Bid[];
-    private winnerBids:Set<Bid>;
 
-    
     constructor( _auctRepository:IRepository<AuctionElement>,
         _bidRepository:IRepository<Bid>)
         {
             this._auctRepository=_auctRepository;
             this._bidRepository=_bidRepository;
             this.auctionElements=_auctRepository.getAll();
-            this.bids=_bidRepository.getAll();
-            this.winnerBids=new Set<Bid>();
         }
         public startAuction():void{
             this.timerId=setInterval(()=>{
@@ -42,44 +37,31 @@ export class Auction{
             if(!newBid){
                 return false
             }
+            const auctIndex:number=this.auctionElements.findIndex(x=>x.id==newBid.auctionElementId)
+            if(!this.checkBidSumHigher(this.auctionElements[auctIndex],newBid.price)){
+                return false;
+            }
+            this.auctionElements[auctIndex].winnerBid=newBid;
             this._bidRepository.create(newBid)
-            this.bids.push(newBid)
-            return true;
+            this._auctRepository.saveChanges(this.auctionElements)
+            return true; 
         }
+
         public getAuctionList():AuctionElement[]{
             return this.auctionElements;
         }
 
-        public getWinnerBids():Set<Bid>{
-            const end_aucts:AuctionElement[]=this.
-                auctionElements.filter(x=>x.endAuction)
-            for(let auct of end_aucts){
-                let winnerBid:Bid;
-                const filteredBids=this.bids.filter(x=>x.auctionElementId==auct.id)
-                if(!filteredBids){
-                    continue
-                }
-                winnerBid=filteredBids[0];
-                for(let bid of filteredBids){
-                    if(bid.price>winnerBid.price){
-                        winnerBid=bid;
-                    }
-                }
-                this.winnerBids.add(winnerBid)
-            } 
-            return this.winnerBids
-        }
-
-        public getBids():Bid[]
-        {
-            return this.bids;
+        private checkBidSumHigher(auctElement:AuctionElement,newSum:number):boolean{
+            if(auctElement.winnerBid===undefined){
+                return true;
+            }
+            if(auctElement.winnerBid.price<newSum){
+                return true;
+            }
+            return false;
         }
 
         public stopAuction(){
             clearInterval(this.timerId)
-        }
-
-        private getMaxBidByAuctId(auctId:number,winnerBid:Bid){
-         
         }
 }

@@ -1,32 +1,27 @@
 [
     {
-        "auctionElementId": 1,
-        "price": 156000,
-        "id": 8
+        "id": null,
+        "auctionElementId": 10,
+        "price": 10000
     },
     {
-        "id": 9,
-        "auctionElementId": 20,
-        "price": 4569
+        "id": 1,
+        "auctionElementId": 10,
+        "price": 122
     },
     {
-        "id": 10,
-        "auctionElementId": 20,
-        "price": 20000
-    },
-    {
-        "id": 11,
-        "auctionElementId": 13,
-        "price": 2344
-    },
-    {
-        "id": 12,
-        "auctionElementId": 1,
-        "price": 23342343243
-    },
-    {
-        "id": 13,
+        "id": 2,
         "auctionElementId": 2,
-        "price": 5643
+        "price": 10000
+    },
+    {
+        "id": 3,
+        "auctionElementId": 12,
+        "price": 12903
+    },
+    {
+        "id": 4,
+        "auctionElementId": 12,
+        "price": 12000
     }
 ]

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiConfig } from '../api-config';
 import { AuctionElement } from '../models/auction_element';
 import { Bid } from '../models/bid';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-auctions-list',
@@ -18,9 +17,6 @@ export class AuctionsComponent implements OnInit{
 
     selectedAuctionElementId:number=0
    
-    winnerBids?:Bid[]
-    bids?:Bid[]
-
     constructor(){
         this.newBid=new Bid()
         this.newAuct=new AuctionElement()
@@ -55,7 +51,6 @@ export class AuctionsComponent implements OnInit{
 
     selectAuctionElementId(id:number){
       this.selectedAuctionElementId=id;
-      this.winnerBids=undefined;
     }
 
     getTimeLeftStr(timeleft:number):string{
@@ -81,10 +76,6 @@ export class AuctionsComponent implements OnInit{
       this.webSocket.onmessage=(e)=>{
           const response=JSON.parse(e.data.toString('utf-8'));
           this.auctElements=response.auctionElements.reverse();
-          if(this.selectedAuctionElementId!=0){
-            this.bids=response.bids?.filter((x:any)=>x.auctionElementId==this.selectedAuctionElementId)
-            this.winnerBids=response.winnerBids?.filter((x:any)=>x.auctionElementId==this.selectedAuctionElementId)
-          }
       } 
     }
 

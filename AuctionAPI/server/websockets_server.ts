@@ -18,7 +18,6 @@ export class AuctionServer implements IServer
         this.webSocketServer=new WebSocket.Server({
             port:this.port
         });
-    
     }
     public startServer()
     {
@@ -28,12 +27,8 @@ export class AuctionServer implements IServer
                 if(data.toString("utf-8")=='getAuction'){
                     intervalId=setInterval(()=>{
                         const auctionElements:AuctionElement[]=this.auction.getAuctionList()
-                        const bids:Bid[]=this.auction.getBids()
-                        const winnerBids:Set<Bid>=this.auction.getWinnerBids()
                         const json:string=JSON.stringify({
                             auctionElements:auctionElements,
-                            winnerBids:Array.from(winnerBids),
-                            bids:bids
                         })
                         ws.send(json)
                     },1000)

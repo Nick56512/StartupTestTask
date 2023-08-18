@@ -1,9 +1,14 @@
 "use strict";
 class Bid {
-    constructor(auctionElementId, price) {
+    constructor() {
         this.auctionElementId = 0;
         this.price = 0;
-        this.auctionElementId = auctionElementId,
-            this.price = price;
+        /* constructor(
+             auctionElementId:number,
+             price:number)
+         {
+             this.auctionElementId=auctionElementId,
+             this.price=price;
+         }*/
     }
 }

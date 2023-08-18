@@ -21,12 +21,8 @@ class AuctionServer {
                 if (data.toString("utf-8") == 'getAuction') {
                     intervalId = setInterval(() => {
                         const auctionElements = this.auction.getAuctionList();
-                        const bids = this.auction.getBids();
-                        const winnerBids = this.auction.getWinnerBids();
                         const json = JSON.stringify({
                             auctionElements: auctionElements,
-                            winnerBids: Array.from(winnerBids),
-                            bids: bids
                         });
                         ws.send(json);
                     }, 1000);

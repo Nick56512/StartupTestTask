@@ -20,12 +20,14 @@ class AuctionElement {
             const endDate = Date.parse(auct.endTime.toLocaleString());
             if (endDate <= current.valueOf()) {
                 auct.endAuction = true;
-                return;
+                return false;
             }
             auct.remainder = endDate - current.valueOf();
+            return true;
         }
         catch (e) {
             console.log(e);
+            return false;
         }
     }
 }

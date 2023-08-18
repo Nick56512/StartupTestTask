@@ -3,130 +3,119 @@
         "id": 2,
         "description": "Rare Collectible Coins",
         "startingBid": 1000,
-        "endTime": "2023-08-20T07:12:35.192Z"
+        "endTime": "2023-08-18T11:48:35.192Z",
+        "remainder": 629,
+        "winnerBid": {
+            "id": 2,
+            "auctionElementId": 2,
+            "price": 10000
+        },
+        "endAuction": true
     },
     {
         "id": 3,
         "description": "Vintage Watch",
         "startingBid": 800,
-        "endTime": "2023-08-30T07:12:35.192Z"
+        "endTime": "2023-08-30T07:12:35.192Z",
+        "remainder": 1019266394
     },
     {
         "id": 4,
         "description": "Classic Car",
         "startingBid": 15000,
-        "endTime": "2023-08-21T07:12:35.192Z"
+        "endTime": "2023-08-21T07:12:35.192Z",
+        "remainder": 241666394
     },
     {
         "id": 5,
         "description": "Diamond Necklace",
         "startingBid": 2000,
-        "endTime": "2023-08-20T07:12:35.192Z"
+        "endTime": "2023-08-20T07:12:35.192Z",
+        "remainder": 155266394
     },
     {
         "id": 6,
         "description": "Rare Book Collection",
         "startingBid": 700,
-        "endTime": "2023-09-10T14:00:00Z"
+        "endTime": "2023-09-10T14:00:00Z",
+        "remainder": 1994111202
     },
     {
         "id": 7,
         "description": "Signed Movie Memorabilia",
         "startingBid": 300,
-        "endTime": "2023-09-15T19:00:00Z"
+        "endTime": "2023-09-15T19:00:00Z",
+        "remainder": 2444111202
     },
     {
         "id": 8,
         "description": "Sculpture Artwork",
         "startingBid": 1200,
-        "endTime": "2023-09-18T17:00:00Z"
+        "endTime": "2023-09-18T17:00:00Z",
+        "remainder": 2696111202
     },
     {
         "id": 9,
         "description": "Vintage Vinyl Records",
         "startingBid": 400,
-        "endTime": "2023-09-22T21:00:00Z"
+        "endTime": "2023-09-22T21:00:00Z",
+        "remainder": 3056111202
     },
     {
         "id": 10,
         "description": "Sports Memorabilia Collection",
         "startingBid": 600,
-        "endTime": "2023-09-25T23:00:00Z"
+        "endTime": "2023-09-25T23:00:00Z",
+        "remainder": 3322511202,
+        "winnerBid": {
+            "id": 1,
+            "auctionElementId": 10,
+            "price": 122
+        }
     },
     {
         "id": 11,
-        "description": "Designer Handbag",
-        "startingBid": 300,
-        "endTime": "2023-09-30T13:00:00Z"
+        "description": "Description",
+        "startingBid": 10000,
+        "remainder": 0,
+        "endAuction": true,
+        "endTime": "2023-08-18T11:55"
     },
     {
         "id": 12,
-        "description": "Vintage Camera Set",
-        "startingBid": 250,
-        "endTime": "2023-10-05T10:00:00Z",
-        "remainder": 4200170488
+        "description": "dwsdsada",
+        "startingBid": 2312,
+        "remainder": 31811202,
+        "endAuction": false,
+        "endTime": "2023-08-18T23:55",
+        "winnerBid": {
+            "id": 4,
+            "auctionElementId": 12,
+            "price": 12000
+        }
     },
     {
         "id": 13,
-        "description": "Fine Wine Collection",
-        "startingBid": 800,
-        "endTime": "2023-10-10T15:00:00Z",
-        "remainder": 4650170488
+        "description": "Unique beer",
+        "startingBid": 1200,
+        "remainder": 0,
+        "endAuction": false,
+        "endTime": "2023-08-18T14:11"
     },
     {
         "id": 14,
-        "description": "Handcrafted Jewelry",
-        "startingBid": 350,
-        "endTime": "2023-10-15T17:00:00Z",
-        "remainder": 5089370488
+        "description": "",
+        "startingBid": 0,
+        "remainder": 0,
+        "endAuction": false,
+        "endTime": "2023-08-18T21:14"
     },
     {
         "id": 15,
-        "description": "Limited Edition Prints",
-        "startingBid": 150,
-        "endTime": "2023-10-20T12:00:00Z",
-        "remainder": 5503370488
-    },
-    {
-        "id": 16,
-        "description": "Rare Stamps Collection",
-        "startingBid": 500,
-        "endTime": "2023-10-25T14:00:00Z",
-        "remainder": 5942570488
-    },
-    {
-        "id": 17,
-        "description": "Classic Chess Set",
-        "startingBid": 100,
-        "endTime": "2023-10-30T16:00:00Z",
-        "remainder": 6381770488
-    },
-    {
-        "id": 18,
-        "description": "Abstract Art Painting",
-        "startingBid": 600,
-        "endTime": "2023-11-02T18:00:00Z",
-        "remainder": 6648170488
-    },
-    {
-        "id": 19,
-        "description": "Vintage Typewriter",
-        "startingBid": 200,
-        "endTime": "2023-11-05T20:00:00Z",
-        "remainder": 6914570488
-    },
-    {
-        "id": 20,
-        "description": "Rare Gemstone Collection",
-        "startingBid": 1000,
-        "endTime": "2023-11-10T22:00:00Z",
-        "remainder": 7353770488
-    },
-    {
-        "id": 21,
-        "description": "Unique sticker",
-        "startingBid": 8000,
+        "description": "wsdw",
+        "startingBid": 2332,
         "remainder": 0,
-        "endTime": "2023-12-09T00:23"
+        "endAuction": false,
+        "endTime": "2023-08-18T16:17"
     }
 ]

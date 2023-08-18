@@ -1,44 +1,13 @@
-<div class="container-fluid col-xxl-7">
-
-    <table class="table" *ngIf="winnerBids">
-        <thead>
-            <tr>
-                <th scope="col">Winner unique bid id</th>
-                <th scope="col">Winner sum</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let bid of winnerBids">
-                <td scope="row">{{bid.id}}</td>
-                <td>{{bid.price}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
+<div class="container-fluid col-xxl-8">
     <div class="ms-5 d-inline" *ngIf="selectedAuctionElementId">
-        <h3>Add new bid to auction element {{selectedAuctionElementId}}</h3>
+        <h4>Add new bid to auction element {{selectedAuctionElementId}}</h4>
        <div>
             <label>Price</label>
-            <input type="number" min="500" class="form-control w-25" [(ngModel)]="newBid.price">
+            <input type="number" min="500" class="form-control w-50" [(ngModel)]="newBid.price">
             <button class="btn btn-warning" (click)="addNewBid()">Add new bid</button>
         </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Unique bid id</th>
-                <th scope="col">Sum</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let bid of bids">
-                <td scope="row">{{bid.id}}</td>
-                <td>{{bid.price}}</td>
-            </tr>
-        </tbody>
-    </table>
     </div>  
+
 <div class="d-inline">
     <h3>Add new auction element</h3>
     <div>
@@ -60,16 +29,30 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Description</th>
+            <th scope="col">Start price</th>
             <th scope="col">End time</th>
+            <th scope="col">Last bid id</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let auct of auctElements">
             <td scope="row">{{auct.id}}</td>
             <td>{{auct.description}}</td>
-            <td>{{getTimeLeftStr(auct.remainder)}}</td>
+            <td>{{auct.startingBid}}</td>
             <td>
-                <button class="btn btn-success" (click)="selectAuctionElementId(auct.id)">Bids</button>
+                <div *ngIf="auct.endAuction">
+                    <h5 class="text-danger">Time is over!</h5>
+                </div>
+                <div *ngIf="!auct.endAuction">
+                    <h5>{{getTimeLeftStr(auct.remainder)}}</h5>
+                </div>
+            </td>
+            <td>{{auct.winnerBid?.id}}</td>
+            <td>{{auct.winnerBid?.price}}</td>
+            <td *ngIf="!auct.endAuction">
+                <button class="btn btn-primary" (click)="selectAuctionElementId(auct.id)">Add new bid</button>
             </td>
         </tr>
     </tbody>

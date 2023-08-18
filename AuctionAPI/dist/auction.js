@@ -7,8 +7,6 @@ class Auction {
         this._auctRepository = _auctRepository;
         this._bidRepository = _bidRepository;
         this.auctionElements = _auctRepository.getAll();
-        this.bids = _bidRepository.getAll();
-        this.winnerBids = new Set();
     }
     startAuction() {
         this.timerId = setInterval(() => {
@@ -29,39 +27,29 @@ class Auction {
         if (!newBid) {
             return false;
         }
+        const auctIndex = this.auctionElements.findIndex(x => x.id == newBid.auctionElementId);
+        if (!this.checkBidSumHigher(this.auctionElements[auctIndex], newBid.price)) {
+            return false;
+        }
+        this.auctionElements[auctIndex].winnerBid = newBid;
         this._bidRepository.create(newBid);
-        this.bids.push(newBid);
+        this._auctRepository.saveChanges(this.auctionElements);
         return true;
     }
     getAuctionList() {
         return this.auctionElements;
     }
-    getWinnerBids() {
-        const end_aucts = this.
-            auctionElements.filter(x => x.endAuction);
-        for (let auct of end_aucts) {
-            let winnerBid;
-            const filteredBids = this.bids.filter(x => x.auctionElementId == auct.id);
-            if (!filteredBids) {
-                continue;
-            }
-            winnerBid = filteredBids[0];
-            for (let bid of filteredBids) {
-                if (bid.price > winnerBid.price) {
-                    winnerBid = bid;
-                }
-            }
-            this.winnerBids.add(winnerBid);
+    checkBidSumHigher(auctElement, newSum) {
+        if (auctElement.winnerBid === undefined) {
+            return true;
         }
-        return this.winnerBids;
-    }
-    getBids() {
-        return this.bids;
+        if (auctElement.winnerBid.price < newSum) {
+            return true;
+        }
+        return false;
     }
     stopAuction() {
         clearInterval(this.timerId);
-    }
-    getMaxBidByAuctId(auctId, winnerBid) {
     }
 }
 exports.Auction = Auction;

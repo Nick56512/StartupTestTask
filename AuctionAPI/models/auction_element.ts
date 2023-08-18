@@ -4,6 +4,8 @@ export class AuctionElement{
     private startingBid:number;
     private endTime:Date;
     private remainder:number=0;
+
+    public winnerBid?:Bid;
     public endAuction:boolean=false;
 
     constructor(id:number,
@@ -24,18 +26,20 @@ export class AuctionElement{
     }
 
 
-    public static countdownDate(auct:AuctionElement):void{
+    public static countdownDate(auct:AuctionElement):boolean{
         try{
             const current:Date=new Date();
             const endDate:number=Date.parse(auct.endTime.toLocaleString())
             if(endDate<=current.valueOf()){
                 auct.endAuction=true;
-                return;
+                return false;
             }
             auct.remainder=endDate-current.valueOf();
+            return true;
         }
         catch(e:unknown){
             console.log(e)
+            return false;
         }
     }
 
